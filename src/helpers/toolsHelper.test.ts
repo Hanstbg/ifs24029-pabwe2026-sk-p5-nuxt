@@ -20,8 +20,8 @@ describe("toolsHelper", () => {
     expect(t.formatRupiah("abc")).toContain("0");
     expect(t.formatDate("")).toBe("-");
     expect(t.formatDate("bukan-tanggal")).toBe("-");
-    expect(t.formatDate("2026-12-31 23:59:00")).toContain("2026");
-    expect(t.formatDate("2026-12-31T23:59:00Z")).toContain("2026");
+    expect(t.formatDate("2026-06-15 12:00:00")).toContain("2026");
+    expect(t.formatDate("2026-06-15T12:00:00Z")).toContain("2026");
   });
 
   it("photoUrl", () => {
