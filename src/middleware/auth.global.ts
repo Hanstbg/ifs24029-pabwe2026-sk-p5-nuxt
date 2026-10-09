@@ -1,4 +1,4 @@
-import { authGuard } from "~/router";
+import { authGuard } from "../router";
 
 export default defineNuxtRouteMiddleware((to) => {
   const target = authGuard(to);

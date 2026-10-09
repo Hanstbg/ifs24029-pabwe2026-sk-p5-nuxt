@@ -53,4 +53,29 @@ describe("cashFlowsStore", () => {
     m(api.postCashFlow).mockRejectedValue(new Error("gagal"));
     expect(await store.asyncAddCashFlow(p)).toBe(false);
   });
+  it("semua aksi ambil data gagal tidak mengubah state", async () => {
+    const err = new Error("gagal");
+    m(api.getCashFlows).mockRejectedValue(err);
+    m(api.getLabels).mockRejectedValue(err);
+    m(api.getStatsDaily).mockRejectedValue(err);
+    m(api.getStatsMonthly).mockRejectedValue(err);
+    await store.asyncGetCashFlows();
+    await store.asyncGetLabels();
+    await store.asyncGetStatsDaily();
+    await store.asyncGetStatsMonthly();
+    expect(store.cashFlows).toEqual([]);
+    expect(store.labels).toEqual([]);
+    expect(store.statsDaily).toBeNull();
+    expect(store.statsMonthly).toBeNull();
+  });
+
+  it("mutasi gagal untuk change, delete, dan delete all", async () => {
+    const err = new Error("gagal");
+    m(api.putCashFlow).mockRejectedValue(err);
+    m(api.deleteCashFlow).mockRejectedValue(err);
+    m(api.deleteAllCashFlows).mockRejectedValue(err);
+    expect(await store.asyncChangeCashFlow(1, {} as any)).toBe(false);
+    expect(await store.asyncDeleteCashFlow(1)).toBe(false);
+    expect(await store.asyncDeleteAllCashFlows()).toBe(false);
+  });
 });
