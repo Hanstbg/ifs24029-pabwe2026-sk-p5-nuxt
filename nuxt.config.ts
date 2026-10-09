@@ -22,7 +22,14 @@ export default defineNuxtConfig({
     },
   },
   devServer: { port: customPort },
-  nitro: { devPort: customPort },
+  nitro: {
+    devPort: customPort,
+    // Paksa runtime Nuxt digabung (inline) ke build server, agar modul virtual
+    // nuxt/internal/* (manifest & precomputed) terisi walau path project berspasi di Windows.
+    externals: {
+      inline: [/[\\/]node_modules[\\/]nuxt[\\/]dist[\\/]/, /[\\/]node_modules[\\/]@nuxt[\\/]/, "nuxt/dist", "@nuxt/"],
+    },
+  },
   app: {
     head: {
       title: "Delcom Cash Flow",
