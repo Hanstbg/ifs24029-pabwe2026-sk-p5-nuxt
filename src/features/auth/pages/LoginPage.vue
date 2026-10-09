@@ -24,14 +24,14 @@ async function submit() {
 <template>
   <form class="space-y-4" @submit.prevent="submit">
     <div>
-      <label class="label" for="email">Alamat Email</label>
-      <input id="email" type="email" class="input" placeholder="nama@email.com" :value="email" @input="onEmail" />
+      <label class="label" for="login-email-input">Alamat Email</label>
+      <input id="login-email-input" type="email" class="input" placeholder="nama@email.com" :value="email" @input="onEmail" />
     </div>
     <div>
-      <label class="label" for="password">Kata Sandi</label>
-      <input id="password" type="password" class="input" placeholder="••••••••" :value="password" @input="onPassword" />
+      <label class="label" for="login-password-input">Kata Sandi</label>
+      <input id="login-password-input" type="password" class="input" placeholder="••••••••" :value="password" @input="onPassword" />
     </div>
     <p v-if="error" class="text-sm text-rose-600">{{ error }}</p>
-    <button class="btn-primary w-full" :disabled="auth.isLoading"><LogIn class="h-4 w-4" /> Masuk Sekarang</button>
+    <button id="login-submit-button" type="submit" class="btn-primary w-full" :disabled="auth.isLoading"><LogIn class="h-4 w-4" /> Masuk Sekarang</button>
   </form>
 </template>

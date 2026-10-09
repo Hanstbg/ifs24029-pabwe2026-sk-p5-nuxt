@@ -9,8 +9,8 @@ vi.mock("../api/authApi");
 vi.mock("../../../helpers/toolsHelper", () => ({ showSuccessDialog: vi.fn(), showErrorDialog: vi.fn() }));
 
 async function fillAndSubmit(wrapper: any, email: string, password: string) {
-  await wrapper.find("#email").setValue(email);
-  await wrapper.find("#password").setValue(password);
+  await wrapper.find("#login-email-input").setValue(email);
+  await wrapper.find("#login-password-input").setValue(password);
   await wrapper.find("form").trigger("submit");
   await flushPromises();
 }
