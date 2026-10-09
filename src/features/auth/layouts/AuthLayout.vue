@@ -1,0 +1,22 @@
+<script setup lang="ts">
+import { Wallet } from "lucide-vue-next";
+</script>
+
+<template>
+  <div class="grid min-h-screen lg:grid-cols-2">
+    <div class="hidden flex-col justify-center bg-gradient-to-br from-emerald-600 to-teal-700 p-12 text-white lg:flex">
+      <Wallet class="mb-6 h-12 w-12" />
+      <h1 class="text-4xl font-extrabold">Delcom Cash Flow</h1>
+      <p class="mt-3 max-w-md text-emerald-100">Catat pemasukan dan pengeluaran, pantau saldo kasmu setiap hari.</p>
+    </div>
+    <div class="flex items-center justify-center p-6">
+      <div class="w-full max-w-md">
+        <div class="mb-6 grid grid-cols-2 rounded-xl bg-slate-100 p-1 text-center text-sm font-semibold">
+          <RouterLink to="/auth/login" class="rounded-lg py-2" active-class="bg-white text-emerald-600 shadow">Masuk Akun</RouterLink>
+          <RouterLink to="/auth/register" class="rounded-lg py-2" active-class="bg-white text-emerald-600 shadow">Daftar Baru</RouterLink>
+        </div>
+        <div class="card"><RouterView /></div>
+      </div>
+    </div>
+  </div>
+</template>

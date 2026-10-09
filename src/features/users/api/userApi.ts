@@ -1,0 +1,15 @@
+import { apiFetch } from "../../../helpers/apiHelper";
+
+export const getUsers = () => apiFetch("/users");
+export const getMe = () => apiFetch("/users/me");
+export const putMe = ({ name, email }) => apiFetch("/users/me", { method: "PUT", body: { name, email } });
+
+export const postPhoto = (file) => {
+  const form = new FormData();
+  form.append("photo", file);
+  return apiFetch("/users/me/photo", { method: "POST", body: form });
+};
+
+// Sesuai dokumentasi Delcom: PUT /users/password
+export const putPassword = ({ password, new_password, new_password_confirmation }) =>
+  apiFetch("/users/password", { method: "PUT", body: { password, new_password, new_password_confirmation } });
