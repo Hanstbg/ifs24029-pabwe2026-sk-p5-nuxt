@@ -24,7 +24,7 @@ async function logout() {
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
       <div class="flex items-center gap-3">
         <button class="lg:hidden" aria-label="Menu" @click="$emit('toggle')"><Menu class="h-6 w-6" /></button>
-        <RouterLink to="/" class="flex items-center gap-2 text-lg font-extrabold text-emerald-600"><Wallet class="h-6 w-6" /> Delcom Cash Flow</RouterLink>
+        <RouterLink to="/" class="flex items-center gap-2 text-lg font-extrabold text-emerald-700"><Wallet class="h-6 w-6" /> Delcom Cash Flow</RouterLink>
       </div>
       <div class="flex items-center gap-3">
         <div v-if="users.profile" class="flex items-center gap-2">

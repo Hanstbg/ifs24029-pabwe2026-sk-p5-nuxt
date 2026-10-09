@@ -20,7 +20,7 @@ const items = [
     <nav class="space-y-1">
       <RouterLink
         v-for="item in items" :key="item.to" :to="item.to"
-        class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-emerald-50 hover:text-emerald-600"
+        class="flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-emerald-50 hover:text-emerald-700"
         @click="$emit('close')"
       >
         <component :is="item.icon" class="h-4 w-4" /> {{ item.label }}

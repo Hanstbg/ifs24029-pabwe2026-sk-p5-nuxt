@@ -22,7 +22,7 @@ async function remove() {
 
 <template>
   <section v-if="store.cashFlow" class="mx-auto max-w-2xl space-y-5">
-    <RouterLink to="/" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600"><ArrowLeft class="h-4 w-4" /> Kembali</RouterLink>
+    <RouterLink to="/" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-700"><ArrowLeft class="h-4 w-4" /> Kembali</RouterLink>
     <div class="card space-y-3">
       <div class="flex items-start justify-between">
         <h1 class="text-2xl font-extrabold">{{ store.cashFlow.label }}</h1>
@@ -30,7 +30,7 @@ async function remove() {
           {{ store.cashFlow.type === "inflow" ? "Pemasukan" : "Pengeluaran" }}
         </span>
       </div>
-      <p class="text-3xl font-extrabold" :class="store.cashFlow.type === 'inflow' ? 'text-emerald-600' : 'text-rose-600'">{{ formatRupiah(store.cashFlow.nominal) }}</p>
+      <p class="text-3xl font-extrabold" :class="store.cashFlow.type === 'inflow' ? 'text-emerald-700' : 'text-rose-600'">{{ formatRupiah(store.cashFlow.nominal) }}</p>
       <dl class="grid gap-2 text-sm sm:grid-cols-2">
         <div><dt class="text-slate-500">Sumber dana</dt><dd class="font-semibold">{{ sourceName[store.cashFlow.source] }}</dd></div>
         <div><dt class="text-slate-500">Dibuat</dt><dd class="font-semibold">{{ formatDate(store.cashFlow.created_at) }}</dd></div>
