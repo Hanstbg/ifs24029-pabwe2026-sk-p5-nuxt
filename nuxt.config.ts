@@ -27,6 +27,9 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { headers: { "cache-control": "public, max-age=0, must-revalidate" } },
     "/auth/**": { headers: { "cache-control": "public, max-age=0, must-revalidate" } },
+    "/cash-flows/**": { headers: { "cache-control": "public, max-age=0, must-revalidate" } },
+    "/profile": { headers: { "cache-control": "public, max-age=0, must-revalidate" } },
+    "/users": { headers: { "cache-control": "public, max-age=0, must-revalidate" } },
     "/_nuxt/**": { headers: { "cache-control": "public, max-age=31536000, immutable" } },
   },
   nitro: {

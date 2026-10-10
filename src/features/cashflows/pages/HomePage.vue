@@ -24,7 +24,7 @@ onMounted(() => { load(); store.asyncGetLabels(); });
 
 const cards = computed(() => [
   { title: "Total Saldo Kas Bersih", value: store.stats.cashflow, tone: "text-slate-900" },
-  { title: "Total Pemasukan (Inflow)", value: store.stats.total_inflow, tone: "text-emerald-600" },
+  { title: "Total Pemasukan (Inflow)", value: store.stats.total_inflow, tone: "text-emerald-700" },
   { title: "Total Pengeluaran (Outflow)", value: store.stats.total_outflow, tone: "text-rose-600" },
   { title: "Saldo Kas Tunai", value: store.stats.cash, tone: "text-slate-900" },
   { title: "Saldo Rekening Tabungan", value: store.stats.savings, tone: "text-slate-900" },
@@ -109,7 +109,7 @@ const afterMutation = () => { load(); store.asyncGetLabels(); };
             </td>
             <td class="px-4 py-3">{{ c.label }}</td>
             <td class="px-4 py-3">{{ sourceName[c.source] }}</td>
-            <td class="px-4 py-3 text-right font-semibold" :class="c.type === 'inflow' ? 'text-emerald-600' : 'text-rose-600'">{{ formatRupiah(c.nominal) }}</td>
+            <td class="px-4 py-3 text-right font-semibold" :class="c.type === 'inflow' ? 'text-emerald-700' : 'text-rose-600'">{{ formatRupiah(c.nominal) }}</td>
             <td class="px-4 py-3">
               <div class="flex justify-end gap-1">
                 <RouterLink :to="`/cash-flows/${c.id}`" class="btn-ghost !px-2 !py-1" aria-label="Detail"><Eye class="h-4 w-4" /></RouterLink>

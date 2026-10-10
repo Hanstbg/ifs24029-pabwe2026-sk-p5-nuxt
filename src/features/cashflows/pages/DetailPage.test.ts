@@ -49,7 +49,7 @@ describe("DetailPage", () => {
     expect(wrapper.text()).toContain("Tunai");
     expect(wrapper.text()).toContain("bulanan");
     expect(wrapper.text()).toContain("5.000.000");
-    expect(wrapper.find("p.text-3xl").classes()).toContain("text-emerald-600");
+    expect(wrapper.find("p.text-3xl").classes()).toContain("text-emerald-700");
   });
 
   it("menampilkan detail pengeluaran tanpa deskripsi", async () => {

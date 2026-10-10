@@ -8,8 +8,8 @@ describe("toolsHelper", () => {
   beforeEach(() => vi.clearAllMocks());
 
   it("dialog success, error, confirm", async () => {
-    t.showSuccessDialog("ok");
-    t.showErrorDialog("bad");
+    await t.showSuccessDialog("ok");
+    await t.showErrorDialog("bad");
     (Swal.fire as any).mockResolvedValueOnce({ isConfirmed: true });
     expect(await t.showConfirmDialog("x")).toBe(true);
     expect(Swal.fire).toHaveBeenCalledTimes(3);
