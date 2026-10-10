@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import { deferNuxtCss } from "./server/utils/deferCss";
 
@@ -16,6 +17,13 @@ export default defineNuxtConfig({
   pages: true,
   css: ["~/index.css"],
   modules: ["@pinia/nuxt"],
+  hooks: {
+    // Pakai src/app.vue langsung sebagai root component (tanpa nuxt-root bawaan: Suspense, error boundary,
+    // dll.) karena ini SPA yang hanya memakai vue-router; bundle awal jadi lebih kecil.
+    "app:resolve"(app) {
+      app.rootComponent = fileURLToPath(new URL("./src/app.vue", import.meta.url));
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
     define: {
