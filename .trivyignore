@@ -1,0 +1,21 @@
+# Sementara abaikan kerentanan braces, node-forge, dan simple-git
+
+# 1. braces (stack-exhaustion DoS): no published version fix yet (> 3.0.3)
+GHSA-vfj7-8cjw-p6xm
+CVE-2026-93687
+
+# 2. node-forge (RSA PKCS#1 v1.5 verification in listhen): no published version fix yet (> 1.4.0)
+GHSA-86w9-cpqp-85rv
+CVE-2026-85393
+
+# 3. simple-git (via nuxt > @nuxt/devtools dan @nuxt/kit): fix hanya di v4, tidak kompatibel dengan @nuxt/kit
+GHSA-x6jw-m9v5-85vh
+GHSA-g4wm-2vf7-vfgr
+GHSA-858h-whjf-mvg5
+CVE-2026-102826
+CVE-2026-102827
+CVE-2026-102828
+
+# 4. @simple-git/argv-parser (dependency simple-git)
+GHSA-v5rq-49vh-5v5c
+CVE-2026-102829
