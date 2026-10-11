@@ -1,5 +1,5 @@
 {
-  "name": "username-pabwe2026-sk-p5-nuxt",
+  "name": "ifs24029-pabwe2026-sk-p5-nuxt",
   "type": "module",
   "private": true,
   "scripts": {
@@ -24,7 +24,11 @@
     "vue": "^3.5.43",
     "vue-router": "^5.3.1"
   },
-  "overrides": { "dompurify": "^3.2.4" },
+  "overrides": {
+    "dompurify": "^3.2.4",
+    "simple-git": "^4.0.1",
+    "@simple-git/argv-parser": "^2.0.1"
+  },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@testing-library/jest-dom": "^7.0.1",
